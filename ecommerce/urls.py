@@ -22,5 +22,7 @@ from products import *
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
-	path('products/', include('products.urls'))
+	path('products/', include('products.urls')),
+	path('login/', include('login.urls')),
+
 ]
