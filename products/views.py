@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render , redirect
 from django.http import HttpResponse
 import json
 import requests
@@ -18,6 +18,10 @@ def register(request):
 
 def buynow(request , id):
 	if request.method == 'POST':
-		return HttpResponse("You have successfully bought the product with ID: " + str(id))
+		print("Controll is here")
+		return redirect('sucesspage')
 	else:
-		return HttpResponse("This view only accepts POST requests")
+		return redirect('sucesspage')
+
+def sucess(request):
+	return render(request , 'sucess.html')
