@@ -17,4 +17,7 @@ def register(request):
 	return render(request , 'productspage.html')
 
 def buynow(request , id):
-	return HttpResponse("You have successfully bought the product" + id)
+	if request.method == 'POST':
+		return HttpResponse("You have successfully bought the product with ID: " + str(id))
+	else:
+		return HttpResponse("This view only accepts POST requests")
