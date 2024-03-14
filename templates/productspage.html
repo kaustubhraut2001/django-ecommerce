@@ -27,6 +27,23 @@
     </style>
 </head>
 
+<script>
+    function buyNow(id) {
+        console.log(id);
+        fetch('/products/buynow/' + id + '/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': '{{csrf_token}}'
+                }
+            })
+            .then(console.log('Data sent'))
+            .then(data => {
+                console.log(data, "gd");
+            });
+    }
+</script>
+
 <body>
     <h5>This is template</h5>
     {% for product in products%}
@@ -36,8 +53,11 @@
         <h3>{{product.title}}</h3>
         <p>{{product.price}}</p>
         <p>{{product.description}}</p>
+        <button onclick="buyNow('{{ product.id }}')">Buy now</button>
     </div>
     {% endfor %}
+
+
 </body>
 
 </html>

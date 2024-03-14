@@ -5,26 +5,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 10px;
+            padding: 10px;
+            width: 20rem;
+            border: 1px solid #000;
+        }
+        
+        .username-st {
+            margin: 10px;
+        }
+        
+        .password-st {
+            margin: 10px;
+        }
+    </style>
 </head>
 
 <body>
     <form method="POST">
         {% csrf_token %}
-        <div>
-            <label for="username">Username</label>
-            <input type="text" name="username" id="username">
-        </div>
-        <div>
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password">
-        </div>
-        <div>
-            <button type="submit">Login</button>
-        </div>
-        <!-- <div>
+        <div class="container">
+            <div class="username-st">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username">
+            </div>
+            <div class="password-st">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password">
+            </div>
+            <div>
+                <button type="submit">Login</button>
+            </div>
+            <!-- <div>
 			<a href="/products/register">Register</a>
 		</div> -->
+        </div>
     </form>
+
 </body>
 
 </html>

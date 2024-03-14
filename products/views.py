@@ -15,3 +15,6 @@ def productlist(request):
 
 def register(request):
 	return render(request , 'productspage.html')
+
+def buynow(request , id):
+	return HttpResponse("You have successfully bought the product" + id)
